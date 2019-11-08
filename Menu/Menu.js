@@ -36,24 +36,28 @@ let menuItems = [
 // menuItems.forEach(function(list){
 //   list.
 // })
-const menu = document.createElement('div');
-const unorderedList = document.createElement('ul');
+const newMenu = function(array){
+  const menu = document.createElement('div');
+  const unorderedList = document.createElement('ul');
+  menu.appendChild(unorderedList)
 
-menu.classList.add('menu')
+  menu.classList.add('menu')
 
-//  const menuButton = document.querySelector('.menu-button');
-//  menuButton.addEventListener('click', function(){
-//    const menuDiv = document.querySelector('.menu')
-//   menuDiv.toggle('menu--open');
-    
-//  })
-const menuBtn = document.querySelector('.menu-button');
-menuBtn.addEventListener('click', ()=>{
- const menuDiv = document.querySelector('.menu')
- menuDiv.classList.toggle('menu--open');
- 
+  array.forEach(function(item){
+    const listItem = document.createElement('li');
+    listItem.textContent = item;
+    unorderedList.appendChild(listItem);    
+  })
+  return menu
+}
+
+const menuB = document.querySelector('.menu-button');
+menuB.addEventListener('click', function(){
+  const menu = document.querySelector('.menu');
+  menu.classList.toggle('menu--open')
 })
+const header = document.querySelector('.header');
+const askMe = newMenu(menuItems);
+header.appendChild(askMe)
 
 
- 
-console.log(menu);
