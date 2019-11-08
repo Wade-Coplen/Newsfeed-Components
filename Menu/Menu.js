@@ -41,10 +41,19 @@ const unorderedList = document.createElement('ul');
 
 menu.classList.add('menu')
 
- const menuButton = document.querySelector('.menu-button');
- menuButton.addEventListener('click', function(){
-   const menuDiv =document.querySelector('.menu')
-  menuDiv.classList.toggle('menu--open');
+//  const menuButton = document.querySelector('.menu-button');
+//  menuButton.addEventListener('click', function(){
+//    const menuDiv = document.querySelector('.menu')
+//   menuDiv.toggle('menu--open');
     
- })
+//  })
+const menuBtn = document.querySelector('.menu-button');
+menuBtn.addEventListener('click', ()=>{
+ const menuDiv = document.querySelector('.menu')
+ menuDiv.classList.toggle('menu--open');
+ 
+})
+
+
+ 
 console.log(menu);
